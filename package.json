@@ -5,13 +5,13 @@
   "description": "Reusable Vue 3 UI components with TypeScript",
   "author": "Fiction",
   "license": "MIT",
-  "homepage": "https://github.com/fiction/elements",
+  "homepage": "https://github.com/fictionco/fiction-elements",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fiction/elements.git"
+    "url": "https://github.com/fictionco/fiction-elements.git"
   },
   "bugs": {
-    "url": "https://github.com/fiction/elements/issues"
+    "url": "https://github.com/fictionco/fiction-elements/issues"
   },
   "keywords": [
     "vue",
