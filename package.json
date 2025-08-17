@@ -60,7 +60,8 @@
     "clean": "rm -rf dist node_modules",
     "prepublishOnly": "pnpm build",
     "docs:dev": "cd docs && pnpm dev",
-    "docs:build": "cd docs && pnpm build"
+    "docs:build": "cd docs && pnpm build",
+    "check": "git pull && pnpm test --run && pnpm lint && pnpm typecheck && git push"
   },
   "peerDependencies": {
     "vue": "^3.4.0"
