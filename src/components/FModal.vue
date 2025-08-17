@@ -1,8 +1,8 @@
 <script lang="ts" setup>
+import { uiReset, waitFor } from '@fiction/utils'
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
-import { onResetUi, resetUi, waitFor } from '@fiction/utils'
-import { popupUtil } from '../utils/popupUtil'
-import FClose from './FClose.vue'
+import FClose from '@/components/FClose.vue'
+import { popupUtil } from '@/utils/popupUtil'
 
 defineOptions({ name: 'FModal' })
 
@@ -14,6 +14,7 @@ const {
   hasClose = false,
   title = '',
   transitionMode = 'modal',
+  teleportTo = 'body',
 } = defineProps<{
   vis?: boolean
   modalClass?: string
@@ -22,6 +23,7 @@ const {
   hasClose?: boolean
   title?: string
   transitionMode?: 'modal' | 'slideUp'
+  teleportTo?: string | Element
 }>()
 
 const emit = defineEmits<{
@@ -66,8 +68,7 @@ onMounted(async () => {
       if (vis) {
         popupUtil.activate()
         setTimeout(() => (afterVisible.value = true), 300)
-      }
-      else {
+      } else {
         afterVisible.value = false
         popupUtil.deactivate()
       }
@@ -81,14 +82,15 @@ onMounted(async () => {
   })
 
   await waitFor(50)
-  onResetUi((args) => {
-    if (args.scope === 'all' && vis)
+  const resetCleanup = uiReset.onReset(() => {
+    if (vis)
       close({ reason: 'reset' })
   })
+  cleanups.push(resetCleanup)
 })
 
 onUnmounted(() => {
-  cleanups.forEach(c => c())
+  cleanups.forEach((c) => c())
 })
 
 const modalTransition = computed(() => {
@@ -120,7 +122,7 @@ export default {
 </script>
 
 <template>
-  <Teleport to="body">
+  <Teleport :to="teleportTo">
     <div
       class="fixed inset-0 z-50"
       aria-labelledby="modal-title"
@@ -152,7 +154,7 @@ export default {
               v-if="vis"
               :class="classes"
               class="click-stop"
-              @click.stop="resetUi({ scope: 'inputs', cause: 'modalClick', trigger: 'elementClick' })"
+              @click.stop
             >
               <div
                 v-if="hasClose || title"

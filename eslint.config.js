@@ -84,6 +84,7 @@ export default antfu(
       'docs/dist/',
       'playground/',
       '**/*.md',
+      'vitest.config.ts',
     ],
   },
   {

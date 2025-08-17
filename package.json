@@ -26,7 +26,6 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./styles": "./dist/style.css",
     "./schemas": {
       "types": "./dist/schemas/index.d.ts",
       "import": "./dist/schemas/index.js"
@@ -46,7 +45,8 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "dev": "vite build --watch & vite dev playground",
+    "dev": "vite build --watch",
+    "dev:playground": "vite playground --config playground/vite.config.ts",
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",
     "preview": "vite preview",
     "test": "vitest",
