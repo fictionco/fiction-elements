@@ -51,7 +51,7 @@ const lineClass = computed(() => {
   </a>
 </template>
 
-<style scoped>
+<style scoped lang="less">
 .close {
   .close-line {
     animation-duration: 0.4s;

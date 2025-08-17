@@ -1,71 +1,43 @@
-/* Simple CSS for playground demo */
+@import 'tailwindcss';
+@source "../src";
+@custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  --color-primary-500: #4262a1;
-  --color-primary-600: #3c5898;
-  --color-theme-200: #d1d5db;
-  --color-theme-300: #9ca3af;
-  --color-theme-400: #6b7280;
-  --color-theme-500: #4b5563;
-  --color-theme-600: #374151;
-  --color-theme-700: #1f2a44;
-  --color-theme-800: #111827;
-  --color-background: #ffffff;
-  --color-foreground: #111827;
-  --color-border: #e5e7eb;
+@theme {
+  --color-theme-0: var(--theme-0, #ffffff);
+  --color-theme-25: var(--theme-25, #f8fafc);
+  --color-theme-50: var(--theme-50, #f3f4f6);
+  --color-theme-100: var(--theme-100, #e5e7eb);
+  --color-theme-200: var(--theme-200, #d1d5db);
+  --color-theme-300: var(--theme-300, #9ca3af);
+  --color-theme-400: var(--theme-400, #6b7280);
+  --color-theme-500: var(--theme-500, #4b5563);
+  --color-theme-600: var(--theme-600, #374151);
+  --color-theme-700: var(--theme-700, #1f2a44);
+  --color-theme-800: var(--theme-800, #111827);
+  --color-theme-900: var(--theme-900, #0c0a13);
+  --color-theme-950: var(--theme-950, #030712);
+  --color-theme-975: var(--theme-975, #02060f);
+  --color-theme-1000: var(--theme-1000, #000000);
+
+--color-primary-0: #ffffff;
+--color-primary-25: #eff6ff;
+--color-primary-50: #dbeafe;
+--color-primary-100: #bfdbfe;
+--color-primary-200: #93c5fd;
+--color-primary-300: #60a5fa;
+--color-primary-400: #3b82f6;
+--color-primary-500: #2563eb;
+--color-primary-600: #1d4ed8;
+--color-primary-700: #1e40af;
+--color-primary-800: #1e3a8a;
+--color-primary-900: #172554;
+--color-primary-950: #0c1838;
+--color-primary-975: #070e22;
+--color-primary-1000: #000000;
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--color-background);
-  color: var(--color-foreground);
   margin: 0;
   padding: 0;
 }
-
-/* Utility classes to match the component usage */
-.min-h-screen { min-height: 100vh; }
-.bg-background { background-color: var(--color-background); }
-.text-foreground { color: var(--color-foreground); }
-.text-theme-600 { color: var(--color-theme-600); }
-.bg-primary-500 { background-color: var(--color-primary-500); }
-.bg-primary-600 { background-color: var(--color-primary-600); }
-.bg-theme-300 { background-color: var(--color-theme-300); }
-.bg-theme-400 { background-color: var(--color-theme-400); }
-.bg-theme-500 { background-color: var(--color-theme-500); }
-.bg-theme-600 { background-color: var(--color-theme-600); }
-.text-theme-700 { color: var(--color-theme-700); }
-.text-white { color: white; }
-.border { border: 1px solid; }
-.border-border { border-color: var(--color-border); }
-
-.p-8 { padding: 2rem; }
-.p-6 { padding: 1.5rem; }
-.px-4 { padding-left: 1rem; padding-right: 1rem; }
-.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-.mb-8 { margin-bottom: 2rem; }
-.mb-4 { margin-bottom: 1rem; }
-.max-w-4xl { max-width: 56rem; }
-.mx-auto { margin-left: auto; margin-right: auto; }
-.rounded-lg { border-radius: 0.5rem; }
-.rounded { border-radius: 0.25rem; }
-.shadow { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); }
-.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
-.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-.font-bold { font-weight: 700; }
-.font-semibold { font-weight: 600; }
-.space-y-6 > * + * { margin-top: 1.5rem; }
-.flex { display: flex; }
-.gap-4 { gap: 1rem; }
-.gap-2 { gap: 0.5rem; }
-.items-center { align-items: center; }
-
-button {
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.2s;
-}
-
-button:hover.bg-primary-500 { background-color: var(--color-primary-600); }
-button:hover.bg-theme-500 { background-color: var(--color-theme-600); }
-button:hover.bg-theme-300 { background-color: var(--color-theme-400); }

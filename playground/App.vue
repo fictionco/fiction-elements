@@ -8,15 +8,15 @@ const showSlideUpModal = ref(false)
 </script>
 
 <template>
-  <div class="min-h-screen bg-background p-8">
+  <div class="min-h-screen bg-white text-theme-900 dark:bg-theme-900 p-8">
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-3xl font-bold mb-8 text-foreground">
+      <h1 class="text-3xl font-bold mb-8 text-theme-900 dark:text-theme-0">
         Fiction Elements Demo
       </h1>
 
       <div class="space-y-6">
         <!-- Basic Modal Demo -->
-        <div class="bg-background border border-border p-6 rounded-lg shadow">
+        <div class="bg-theme-0 dark:bg-theme-800 border border-theme-200 dark:border-theme-700 p-6 rounded-lg shadow">
           <h2 class="text-xl font-semibold mb-4">Basic Modal</h2>
           <button
             class="px-4 py-2 bg-primary-500 text-white rounded hover:bg-primary-600"
@@ -27,7 +27,7 @@ const showSlideUpModal = ref(false)
         </div>
 
         <!-- Modal with Title Demo -->
-        <div class="bg-background border border-border p-6 rounded-lg shadow">
+        <div class="bg-theme-0 dark:bg-theme-800 border border-theme-200 dark:border-theme-700 p-6 rounded-lg shadow">
           <h2 class="text-xl font-semibold mb-4">Modal with Title & Close</h2>
           <button
             class="px-4 py-2 bg-primary-500 text-white rounded hover:bg-primary-600"
@@ -38,7 +38,7 @@ const showSlideUpModal = ref(false)
         </div>
 
         <!-- Slide Up Modal Demo -->
-        <div class="bg-background border border-border p-6 rounded-lg shadow">
+        <div class="bg-theme-0 dark:bg-theme-800 border border-theme-200 dark:border-theme-700 p-6 rounded-lg shadow">
           <h2 class="text-xl font-semibold mb-4">Slide Up Modal</h2>
           <button
             class="px-4 py-2 bg-primary-500 text-white rounded hover:bg-primary-600"
@@ -49,7 +49,7 @@ const showSlideUpModal = ref(false)
         </div>
 
         <!-- FClose Component Demo -->
-        <div class="bg-background border border-border p-6 rounded-lg shadow">
+        <div class="bg-theme-0 dark:bg-theme-800 border border-theme-200 dark:border-theme-700 p-6 rounded-lg shadow">
           <h2 class="text-xl font-semibold mb-4">FClose Component</h2>
           <div class="flex items-center gap-4">
             <FClose @click="console.log('Light close clicked')" />

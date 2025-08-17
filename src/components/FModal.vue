@@ -41,7 +41,7 @@ function close(args: { reason: 'escape' | 'reset' }): void {
 }
 
 const cls = modalClass ? [modalClass] : ['max-w-screen-md p-24']
-const defaultStyleClass = styleClass ? [styleClass] : ['bg-background text-foreground', 'shadow-xl']
+const defaultStyleClass = styleClass ? [styleClass] : ['bg-theme-0 text-theme-900', 'shadow-xl']
 
 if (fullScreen)
   cls.push('fixed inset-0')
@@ -140,7 +140,7 @@ export default {
       >
         <div
           v-if="vis"
-          class="fixed inset-0 bg-theme-800/65 active:bg-theme-800/80 cursor-pointer dark:bg-theme-600/90 backdrop-blur-sm transition-opacity"
+          class="fixed inset-0 bg-theme-800/60 active:bg-theme-800/80 cursor-pointer dark:bg-theme-600/90 backdrop-blur-sm transition-opacity"
           @click="close({ reason: 'escape' })"
         />
       </Transition>
