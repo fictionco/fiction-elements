@@ -1,13 +1,12 @@
-import { defineConfig } from 'vitest/config'
-import vue from '@vitejs/plugin-vue'
 import { resolve } from 'node:path'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
-    }
+      '@': resolve(__dirname, 'src'),
+    },
   },
   test: {
     globals: true,
@@ -20,8 +19,8 @@ export default defineConfig({
         'docs/',
         'playground/',
         '**/*.d.ts',
-        '**/*.config.*'
-      ]
-    }
-  }
+        '**/*.config.*',
+      ],
+    },
+  },
 })

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { shortId } from '@fiction/utils'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 defineOptions({ name: 'FClose' })
 
@@ -31,15 +31,15 @@ const lineClass = computed(() => {
     return 'bg-white'
   if (colorMode === 'dark')
     return 'bg-gray-950'
-  else 
+  else
     return 'bg-gray-950 dark:bg-white'
 })
 </script>
 
 <template>
-  <a 
-    :id="randomId" 
-    class="close block cursor-pointer duration-1000 hover:scale-110 active:scale-90 hover:rotate-90 transition-all ease-[cubic-bezier(0.25,1,0.33,1)] w-[60px] h-[60px] rounded-full" 
+  <a
+    :id="randomId"
+    class="close block cursor-pointer duration-1000 hover:scale-110 active:scale-90 hover:rotate-90 transition-all ease-[cubic-bezier(0.25,1,0.33,1)] w-[60px] h-[60px] rounded-full"
     :class="inView ? 'in-view' : 'out-view'"
     @click="$emit('click', $event)"
   >
@@ -62,7 +62,7 @@ const lineClass = computed(() => {
   .close-line1 {
     transform: translateY(30px) translateX(-30px) rotate(0deg);
   }
-  
+
   .close-line2 {
     transform: translateY(-30px) translateX(-30px) rotate(0deg);
   }

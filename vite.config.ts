@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import dts from 'vite-plugin-dts'
 import { resolve } from 'node:path'
+import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   plugins: [
@@ -9,30 +9,30 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       cleanVueFileName: true,
-      tsconfigPath: 'tsconfig.json'
-    })
+      tsconfigPath: 'tsconfig.json',
+    }),
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
-    }
+      '@': resolve(__dirname, 'src'),
+    },
   },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'FictionElements',
       fileName: 'index',
-      formats: ['es']
+      formats: ['es'],
     },
     rollupOptions: {
       external: ['vue'],
       output: {
         globals: {
-          vue: 'Vue'
-        }
-      }
+          vue: 'Vue',
+        },
+      },
     },
     sourcemap: true,
-    emptyOutDir: true
-  }
+    emptyOutDir: true,
+  },
 })

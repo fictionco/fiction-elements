@@ -59,12 +59,12 @@ export default antfu(
       'vue/html-self-closing': ['error', {
         html: { void: 'always', normal: 'always', component: 'always' },
         svg: 'always',
-        math: 'always'
+        math: 'always',
       }],
       'vue/component-name-in-template-casing': ['error', 'PascalCase'],
       'vue/custom-event-name-casing': ['error', 'camelCase'],
       'vue/define-macros-order': ['error', {
-        order: ['defineOptions', 'defineProps', 'defineEmits', 'defineSlots']
+        order: ['defineOptions', 'defineProps', 'defineEmits', 'defineSlots'],
       }],
       'vue/no-empty-component-block': 'error',
       'vue/prefer-separate-static-class': 'error',
