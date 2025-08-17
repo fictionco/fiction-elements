@@ -70,6 +70,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^3.11.2",
     "@changesets/cli": "^2.27.10",
+    "@egoist/tailwindcss-icons": "^1.9.0",
     "@tailwindcss/cli": "^4.0.0",
     "@tailwindcss/vite": "^4.0.0",
     "@types/node": "^22.10.2",
@@ -82,6 +83,7 @@
     "happy-dom": "^15.11.7",
     "postcss": "^8.5.2",
     "tailwindcss": "^4.0.0",
+    "tw-animate-css": "^1.3.7",
     "typescript": "^5.7.2",
     "vite": "^6.0.3",
     "vite-plugin-dts": "^4.3.0",

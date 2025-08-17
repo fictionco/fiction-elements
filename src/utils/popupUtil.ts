@@ -9,7 +9,7 @@ export class PopupUtility {
   isActivated = false
   clearTimeout?: NodeJS.Timeout
 
-  constructor(siteContentSelector: string = '.site-content') {
+  constructor(siteContentSelector: string = 'body') {
     this.originalBodyPosition = ''
     this.originalBodyTop = ''
     this.originalBodyLeft = ''

@@ -41,7 +41,7 @@ function close(args: { reason: 'escape' | 'reset' }): void {
 }
 
 const cls = modalClass ? [modalClass] : ['max-w-screen-md p-24']
-const defaultStyleClass = styleClass ? [styleClass] : ['bg-white text-gray-900 dark:bg-gray-900 dark:text-white', 'shadow-xl']
+const defaultStyleClass = styleClass ? [styleClass] : ['bg-background text-foreground', 'shadow-xl']
 
 if (fullScreen)
   cls.push('fixed inset-0')
@@ -140,7 +140,7 @@ export default {
       >
         <div
           v-if="vis"
-          class="fixed inset-0 bg-gray-800/65 active:bg-gray-800/80 cursor-pointer dark:bg-gray-600/90 backdrop-blur-sm transition-opacity"
+          class="fixed inset-0 bg-theme-800/65 active:bg-theme-800/80 cursor-pointer dark:bg-theme-600/90 backdrop-blur-sm transition-opacity"
           @click="close({ reason: 'escape' })"
         />
       </Transition>
@@ -158,7 +158,7 @@ export default {
             >
               <div
                 v-if="hasClose || title"
-                :class="!title && hasClose ? 'absolute top-0 right-0 z-10' : 'flex justify-between items-center border-b border-gray-200 dark:border-gray-700'"
+                :class="!title && hasClose ? 'absolute top-0 right-0 z-10' : 'flex justify-between items-center border-b border-theme-200 dark:border-theme-700'"
               >
                 <h2 v-if="title" class="text-xl font-semibold p-5">
                   {{ title }}
