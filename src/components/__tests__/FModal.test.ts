@@ -41,7 +41,7 @@ describe('fModal', () => {
     })
 
     // Backdrop should not be visible in test container
-    expect(testContainer.querySelector('.bg-gray-800\\/65')).toBeFalsy()
+    expect(testContainer.querySelector('.bg-theme-800\\/60')).toBeFalsy()
   })
 
   it('renders title when provided', () => {
@@ -77,7 +77,7 @@ describe('fModal', () => {
     })
 
     // Find the backdrop and click it
-    const backdrop = testContainer.querySelector('.bg-gray-800\\/65') as HTMLElement
+    const backdrop = testContainer.querySelector('.bg-theme-800\\/60') as HTMLElement
     backdrop.click()
 
     expect(wrapper.emitted('update:vis')).toBeTruthy()
@@ -92,7 +92,7 @@ describe('fModal', () => {
       },
     })
 
-    const backdrop = testContainer.querySelector('.bg-gray-800\\/65') as HTMLElement
+    const backdrop = testContainer.querySelector('.bg-theme-800\\/60') as HTMLElement
     backdrop.click()
 
     expect(wrapper.emitted('close')).toBeTruthy()
