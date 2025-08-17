@@ -1,0 +1,90 @@
+{
+  "name": "@fiction/elements",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Reusable Vue 3 UI components with TypeScript",
+  "author": "Fiction",
+  "license": "MIT",
+  "homepage": "https://github.com/fiction/elements",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fiction/elements.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fiction/elements/issues"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "components",
+    "ui",
+    "typescript",
+    "tailwind"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles": "./dist/style.css",
+    "./schemas": {
+      "types": "./dist/schemas/index.d.ts",
+      "import": "./dist/schemas/index.js"
+    },
+    "./themes": {
+      "types": "./dist/themes/index.d.ts",
+      "import": "./dist/themes/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch & vite dev playground",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "clean": "rm -rf dist node_modules",
+    "prepublishOnly": "pnpm build",
+    "docs:dev": "cd docs && pnpm dev",
+    "docs:build": "cd docs && pnpm build"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "@fiction/utils": "workspace:*",
+    "tailwind-merge": "^2.6.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.11.2",
+    "@changesets/cli": "^2.27.10",
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.7.0",
+    "autoprefixer": "^10.4.20",
+    "bumpp": "^9.8.1",
+    "eslint": "^9.17.0",
+    "happy-dom": "^15.11.7",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^4.0.0-beta.14",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.8",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.0"
+  }
+}
